@@ -1432,6 +1432,7 @@ function draw() {
     guards = 0;
     moltenMonsters = 0;
     swordElves = 0;
+    player.exp+=1;
     itemCoolDown-=1;
     frameCount+=1;
     eD = 0;
