@@ -1,21 +1,21 @@
 // playlist for the bois: https://open.spotify.com/playlist/3i6twnnYkkdmpeNHU91SXZ
-var scenes = document.getElementsByClassName('scene');
-var scene = "adventure";
-var levelTab = 0;
-var gemCounter = 0;
-var npcs = [];
-var dNpcs = [];
-var popUps = [];
-var eD = 0;
-var lastS = "";
-var grass = [];
-var owns = localStorage.getItem("owned") || "0,0,0,0,0,0,0,0,0,0,0,0,0";
-var buy = new Audio("buy.mp3");
+let scenes = document.getElementsByClassName('scene');
+let scene = "adventure";
+let levelTab = 0;
+let gemCounter = 0;
+let npcs = [];
+let dNpcs = [];
+let popUps = [];
+let eD = 0;
+let lastS = "";
+let grass = [];
+let owns = localStorage.getItem("owned") || "0,0,0,0,0,0,0,0,0,0,0,0,0";
+let buy = new Audio("buy.mp3");
 gems = parseInt(localStorage.getItem("gems")) || 0;
-var version = localStorage.getItem("version") || 1.02;
+let version = localStorage.getItem("version") || 1.02;
 if(!(version == 1.02)) {
     owns = ownsH.split(",")
-    for(var i = owns.length; i < 13; i+=1) {
+    for(let i = owns.length; i < 13; i+=1) {
         owns.push(0)
     }
     alert("Your version is " + version + ". You are upgrading to version 1.02. [This may delete progress or cause unintetional bugs]");
@@ -23,39 +23,39 @@ if(!(version == 1.02)) {
 } else {
     owns = owns.split(",")
 }
-var name = "Thomas";
-var slimes = 0;
-var guards = 0;
-var Goblins = 0;
-var ghosts = 0;
-var elves = 0;
-var yetis = 0;
-var slimes2 = 0;
-var slimes3 = 0;
-var snowmen = 0;
-var rockGiants = 0;
-var rockPeople = 0;
-var allySlimes = 0;
-var GoblinBoss = 0;
-var swordElves = 0;
-var moltenMonsters = 0;
-var frameCount = 0;
-var orcs = 0;
-var kingSlimes = 0;
-var allySoldiers = 0;
-var quest = "None";
-var slimesKilled = 0;
-var goblinsKilled = 0;
-var ghostsKilled = 0;
-var doungensCleared = 0;
-var doungenGolbinKilled = 0;
-var talking = false;
-var talkingTo = "";
-var dialougeLayer = 1;
-var bandagesT1 = parseInt(localStorage.getItem("bandagesT1")) || 0;
-var manaPotionT1 = parseInt(localStorage.getItem("manaPotionT1")) || 0;
-var itemCoolDown = 0;
-var dialouges = {
+let name = "Thomas";
+let slimes = 0;
+let guards = 0;
+let Goblins = 0;
+let ghosts = 0;
+let elves = 0;
+let yetis = 0;
+let slimes2 = 0;
+let slimes3 = 0;
+let snowmen = 0;
+let rockGiants = 0;
+let rockPeople = 0;
+let allySlimes = 0;
+let GoblinBoss = 0;
+let swordElves = 0;
+let moltenMonsters = 0;
+let frameCount = 0;
+let orcs = 0;
+let kingSlimes = 0;
+let allySoldiers = 0;
+let quest = "None";
+let slimesKilled = 0;
+let goblinsKilled = 0;
+let ghostsKilled = 0;
+let doungensCleared = 0;
+let doungenGolbinKilled = 0;
+let talking = false;
+let talkingTo = "";
+let dialougeLayer = 1;
+let bandagesT1 = parseInt(localStorage.getItem("bandagesT1")) || 0;
+let manaPotionT1 = parseInt(localStorage.getItem("manaPotionT1")) || 0;
+let itemCoolDown = 0;
+let dialouges = {
     "Gaurd 1": {
         "1": {
             says: "Gaurd: Hello!",
@@ -122,8 +122,8 @@ var dialouges = {
 if(name !== "Thomas") {
     alert("Error: Crash, Reason: Unknown, you just incountered a bug we are fixing when you exit out of this your code should disappear sorry for the inconvenience.")
 }
-var projectiles = [];
-var projectileStats = {
+let projectiles = [];
+let projectileStats = {
     "boltOrb 1": {
         size: 5,
         dmg: 30,
@@ -333,4 +333,17 @@ var projectileStats = {
         effect: [["lightning", 1, 1]],
         reload: 300,
     },
+}
+
+let maxEnemies = {
+    "goblins": 20,
+    "slimes": 30,
+    "ghosts": 15,
+    "rockPeople": 6,
+    "orcs": 30,
+    "yetis": 30,
+    "snowmen": 30,
+    "elves": 30,
+    "sword elves": 20,
+    "molten monsters": 20,
 }
